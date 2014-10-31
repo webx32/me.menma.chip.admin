@@ -1,0 +1,17 @@
+<div class="container">
+     
+        <form class="form-signin" role="form" ng-submit="adminloginsub()">
+            <h2 class="form-signin-heading">认筹系统</h2>
+            
+            <input type="text"  class="form-control" placeholder="用户名" required autofocus ng-model="tel">
+
+            <input type="password" class="form-control" placeholder="密码" required ng-model="pw">
+            
+            <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+
+            <div class="alert mt20 {{ adminloginclass||'hide'}}" ng-show="adminlogintips">
+                {{ adminlogintips }}
+            </div>
+        </form>
+
+    </div>

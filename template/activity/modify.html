@@ -1,0 +1,66 @@
+<div ng-include src="'template/top.html'"></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div ng-include src="'template/sidebar.html'"></div>
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">活动修改<small><a href="#/admin/activity/show/{{id}}">查看</a></small></h1>
+<div class="panel panel-default noborder" >
+       
+            <div class="panel-body">
+
+                <form class="form-horizontal" name="activityform" >
+
+                    <div class="form-group has-feedback" ng-class="{'has-error':activityform.title.$invalid,'has-success':!activityform.title.$invalid}">
+                        <label  class="col-sm-2 control-label">活动名称</label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control"  ng-model="activity.title" name="title" required placeholder="活动名称">
+                            <span class="glyphicon form-control-feedback" ng-class="{'glyphicon-remove':activityform.title.$invalid,'glyphicon-ok':!userreg.title.$invalid}"></span>
+                        </div>
+                    </div>
+                    <div class="form-group  has-feedback" ng-class="{'has-error':activityform.description.$invalid,'has-success':!activityform.description.$invalid}">
+                        <label  class="col-sm-2 control-label">活动说明</label>
+                        <div class="col-sm-7">
+                            <div class="ueditor col-sm-9" ng-model="activity.description" name="description" required></div> <span class="glyphicon form-control-feedback" ng-class="{'glyphicon-remove':activityform.title.$invalid,'glyphicon-ok':!userreg.title.$invalid}"></span>
+                        </div>
+                    </div>
+                    <div class="form-group  has-feedback" ng-class="{'has-error':activityform.announcement.$invalid,'has-success':!activityform.announcement.$invalid}">
+                        <label  class="col-sm-2 control-label">活动免责声明</label>
+                        <div class="col-sm-7">
+                            <div class="ueditor col-sm-9" ng-model="activity.announcement" name="announcement" required></div>
+                            <span class="glyphicon form-control-feedback" ng-class="{'glyphicon-remove':activityform.announcement.$invalid,'glyphicon-ok':!userreg.announcement.$invalid}"></span>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group  has-feedback" ng-class="{'has-error':activityform.agreement.$invalid,'has-success':!activityform.agreement.$invalid}">
+                        <label  class="col-sm-2 control-label">活动条款</label>
+                        <div class="col-sm-7">
+                            <div class="ueditor col-sm-9" ng-model="activity.agreement" name="agreement" required></div>
+                            <span class="glyphicon form-control-feedback" ng-class="{'glyphicon-remove':activityform.agreement.$invalid,'glyphicon-ok':!activityform.agreement.$invalid}"></span>
+                        </div>
+                    </div>
+
+                
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label"> </label>
+                        <div class="col-sm-10">
+                            
+                <button class="btn btn-success btn-lg" ng-click="complete()" ng-disabled="activityform.$invalid" >修改</button>
+
+                        </div>
+                    </div>
+
+                   
+                </form>
+
+
+            </div>
+        </div> 
+
+        </div>
+
+    </div>
+</div>

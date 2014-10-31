@@ -1,0 +1,373 @@
+html {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    width: 100%;
+    min-width: 980px;
+    margin: 0 auto ! !important;
+    min-height: 100%;
+    padding-top: 50px;
+    background-color: rgb(71, 90, 123);
+    background: -moz-radial-gradient(bottom left, ellipse farthest-corner, rgb(71, 90, 123), rgb(127, 133, 116), rgb(134, 160, 183), rgb(96, 57, 102));
+    background: -webkit-radial-gradient(bottom left, ellipse farthest-corner, rgb(127, 133, 116), rgb(134, 160, 183), rgb(71, 90, 123), rgb(96, 57, 102));
+    background: -ms-radial-gradient(bottom left, ellipse farthest-corner, rgb(71, 90, 123), rgb(134, 160, 183), rgb(96, 57, 102), rgb(127, 133, 116));
+    background: radial-gradient(bottom left, ellipse farthest-corner, rgb(71, 90, 123), rgb(96, 57, 102), rgb(134, 160, 183), rgb(127, 133, 116));
+    background-attachment: fixed;
+}
+
+.bgA {
+    background-color: rgba(0, 0, 0, .5);
+    background-color: #2b3648 \0;
+    *background-color: #2b3648;
+    _background-color: #2b3648;
+    color: #FFF;
+}
+
+.bgA a {
+    color: #FFF;
+}
+
+.bgB {
+    background-color: rgba(0, 0, 0, .3);
+    background-color: #2b3648 \0;
+    *background-color: #2b3648;
+    _background-color: #2b3648;
+    color: #FFF;
+}
+
+.bgB a {
+    color: #FFF;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+.noborder {
+    border: none;
+}
+
+.cp {
+    cursor: pointer;
+}
+
+.modal {
+    /*top: 10%;*/
+}
+
+.modal-dialog {
+    color: #000;
+}
+
+.modal-header {
+    padding: 0 15px;
+}
+
+.modal-header button.close {
+    color: rgb(255, 255, 255);
+    opacity: .8;
+}
+
+.modal-content {
+    /*background-color: rgba(0, 0, 0, .7);*/
+    background-color: #2b3648 \0;
+    *background-color: #2b3648;
+    _background-color: #2b3648;
+    /*color: #FFF;*/
+    margin-top: 20%;
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+.popover {
+    color: #000;
+}
+
+.ueditor {
+    padding-left: 0;
+    min-height: 400px;
+}
+
+span.more {
+    float: right;
+}
+
+.ng-hide {
+    display: none;
+}
+
+/*登陆*/
+
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 100px auto 0 auto;
+}
+
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+    margin-bottom: 10px;
+    text-align: center;
+    color: #FFf;
+}
+
+.form-signin .checkbox {
+    font-weight: normal;
+}
+
+.form-signin .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.click-to-edit input {
+    color: #000;
+}
+
+/*主框架*/
+
+/*
+ * Global add-ons
+ */
+
+.sub-header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/**
+*车位添加下拉框
+*/
+.dropdown-menuulli .dropdown-menu {
+    min-width: auto;
+}
+
+.dropdown-menuulli .dropdown-menu li {
+    float: left;
+    min-width: 10px;
+}
+
+.label {
+    margin-right: 0.5em;
+}
+
+/**警告框**/
+.alert.bottom, .alert.bottom-left, .alert.bottom-right, .alert.top, .alert.top-left, .alert.top-right {
+    position: fixed;
+    z-index: 1050;
+    margin: 20px
+}
+
+.alert.top, .alert.top-left, .alert.top-right {
+    top: 50px
+}
+
+.alert.top {
+    right: 0;
+    left: 0
+}
+
+.alert.top-right {
+    right: 0
+}
+
+.alert.top-right .close {
+    padding-left: 10px
+}
+
+.alert.top-left {
+    left: 0
+}
+
+.alert.top-left .close {
+    padding-right: 10px
+}
+
+.alert.bottom, .alert.bottom-left, .alert.bottom-right {
+    bottom: 0
+}
+
+.alert.bottom {
+    right: 0;
+    left: 0
+}
+
+.alert.bottom-right {
+    right: 0
+}
+
+.alert.bottom-right .close {
+    padding-left: 10px
+}
+
+.alert.bottom-left {
+    left: 0
+}
+
+.alert.bottom-left .close {
+    padding-right: 10px
+}
+
+.page-header {
+    color: #fff;
+}
+
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+
+.navbar-fixed-top {
+    border: 0;
+}
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+
+.sidebar {
+    display: none;
+}
+
+.sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* Scrollable contents if viewport is shorter than content. */
+}
+
+/* Sidebar navigation */
+
+.nav-sidebar {
+    margin-right: -21px;
+    /* 20px padding + 1px border */
+    margin-bottom: 20px;
+    margin-left: -20px;
+}
+
+.nav-sidebar > li > a {
+    padding-right: 20px;
+    padding-left: 20px;
+    border-bottom: #58769c solid 1px;
+}
+
+.nav-sidebar > .active > a,
+.nav-sidebar > li > a:hover,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+    color: #fff;
+    background-color: rgba(121, 165, 195, .8);
+    background-color: #79a5c3 \0;
+    *background-color: #79a5c3;
+    _background-color: #79a5c3;
+    border-right: #1c7dfa solid 7px;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+
+/*table*/
+
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td {
+    border: 1px solid #96a0b4;
+}
+
+/*alert*/
+
+.alert-danger,
+.alert-error {
+    background-color: rgba(242, 222, 222, 1);
+    background-color: #f2dede \0;
+    *background-color: #f2dede;
+    _background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+}
+
+.panel-title span.more {
+    width: 40px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+
+.panel .panel-footer.page {
+}
+
+.panel .panel-footer.page .pagination {
+    margin: 0 auto;
+}
+
+/*
+ * Main content
+ */
+
+.mainframe {
+    padding: 20px;
+}
+
+.mainframe {
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+.mainframe .page-header {
+    margin-top: 0;
+}
+
+.box {
+}
+
+.box .title {
+    height: 20px;
+    line-height: 20px;
+    padding: 20px 0;
+}
+
+/*.allam{-webkit-animation:all 0.5s 0 1 ease normal none ;}*/
+
+/*.ng-enter, .ng-leave {*/
+/*-webkit-transition:0.5s linear all;*/
+/*transition:0.5s linear all;*/
+/*}*/

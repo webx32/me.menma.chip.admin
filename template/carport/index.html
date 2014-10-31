@@ -1,0 +1,79 @@
+<div ng-include src="'template/top.html'"></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div ng-include src="'template/sidebar.html'"></div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">车位管理</h1>
+            <!-- 面板 -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"> <i class="glyphicon glyphicon-user"></i> 车位列表 <i class="glyphicon glyphicon-plus cp" ng-click="addCarPort()" title="添加车位"></i>
+                        <div class="btn-group" ng-model="viewtypes" bs-radio-group>
+                            <label class="btn btn-default"><input class="btn btn-default" value="1" type="radio" name="viewtypes"> First</label>
+                            <label class="btn btn-default"><input class="btn btn-default" value="0" type="radio" name="viewtypes"> Second</label>
+                            </div>
+
+                        <span style="float:right; margin-top: -4px;">
+
+                             <div class="btn-group">
+                                 <button type="button" class="btn btn-primary dropdown-toggle btn-xs" data-toggle="dropdown">
+                                     按车位信息筛选： <span class="caret"></span>
+                                 </button>
+                                 <ul class="dropdown-menu" role="menu">
+                                     <li><a ng-click="quick={tags:'a'}">A</a></li>
+                                     <li><a ng-click="orderby='id'">订单编号</a></li>
+                                     <li><a ng-click="orderby='created_at'">订单时间</a></li>
+
+                                 </ul>
+                             </div>
+
+
+                       <input style="widht:200px; color: #000;" ng-model="querycarinfo" type="text" placeholder="车位号(信息)进行搜索">
+                            </span>
+                    </h3>
+                </div>
+                <table class="table table-bordered  table-hover" >
+                    <tr>
+                        <td class="col-md-3">车位标题</td>
+                        <td class="col-md-1">车位区域</td>
+                        <td class="col-md-1">车位号</td>
+
+                        <td class="col-md-2">是否出售</td>
+                        <!--<td class="col-md-1">操作</td>-->
+                    </tr>
+                    <tr ng-repeat="car in cars|limitTo:50|filter:querycarinfo|filter:quick">
+                        <td>  <div click-to-edit="car.title" click-to-edit-id="car.id" click-to-edit-name="'title'" click-to-edit-index="$index" click-to-edit-allvalue="cars"></div></td>
+                        <td><div click-to-edit-ext="car.AREA" click-to-edit-id="car.id" click-to-edit-name="'AREA'" click-to-edit-index="$index" click-to-edit-allvalue="cars"></div></td>
+                        <td><div click-to-edit-ext="car.NUM" click-to-edit-id="car.id" click-to-edit-name="'NUM'" click-to-edit-index="$index" click-to-edit-allvalue="cars"></div></td>
+
+                        <td ng-switch="car.status">
+                            <span ng-switch-when="created">出售中</span>
+                            <span ng-switch-when="enabled">可用</span>
+                            <span ng-switch-when="paynow">支付中</span>
+                            <span ng-switch-default>出售中</span>
+                        </td>
+
+                        <!--<td><a href="JavaScript:void(0);" data-title="删除车位 ’{{car.title}}‘后，无法恢复！！ " bs-tooltip data-animation="am-fade-and-slide-left" data-placement="left"  id="car{{car.id}}" ng-click="delCarFun(car.id,$index);"  >删除</a>-->
+                        </td>
+                    </tr>
+                </table>
+                <!-- data-content="删除用户 ’{{user.name}}‘后，无法恢复！！ <br>确定删除？" data-placement="left" data-template="/template/user/deluserpopover.html" data-animation="am-fade" bs-popover  -->
+
+                <div class="panel-footer page" ng-show="range>0">
+                    <ul class="pagination">
+                        <li ng-class="prevPageDisabled()">
+                            <a href ng-click="prevPage()"> « Prev</a>
+                        </li>
+                        <li ng-repeat="n in pageCount()" ng-class="{active: n == currentPage}" ng-click="setPage(n)"><a href="#">{{n+1}}</a> 
+                        </li>
+
+                        <li ng-class="nextPageDisabled()"> <a href ng-click="nextPage()">Next »</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

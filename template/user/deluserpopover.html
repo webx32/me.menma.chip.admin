@@ -1,0 +1,13 @@
+<div ng-show="content" tabindex="-1" class="popover ng-scope left am-flip-x" >
+    <div class="arrow"></div>
+    <h3 ng-show="title" ng-bind-html="title" class="popover-title ng-binding"></h3>
+    <div class="popover-content">
+        <form name="popoverForm" class="ng-pristine ng-valid">
+            <p style="min-width:300px" ng-bind-html="content" class="ng-binding">  
+            <div class="form-actions">
+                <button ng-click="$hide()" class="btn btn-primary" type="button">取消</button>
+                <button ng-click="delUserOk(businessId,user.id,$index);$hide()" class="btn btn-danger" type="button">删除</button>
+            </div>
+        </form>
+    </div>
+</div>

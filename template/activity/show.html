@@ -1,0 +1,45 @@
+<style>
+    .panel-body .col-md-2 {
+        text-align: right;
+    }
+</style>
+<div ng-include src="'template/top.html'"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div ng-include src="'template/sidebar.html'"></div>
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">活动管理</h1>
+<div class="panel panel-default noborder" >
+            <div class="panel-body">
+                <div class="row"  style="border-bottom: 1px solid #fff; margin-bottom: 10px;">
+                    <div class="col-md-2"><strong>活动名称</strong></div>
+                    <div class="col-md-7"><div class="col-md-9" title="点击修改">
+                        <div click-to-edit-activity-title="activity.title" click-to-edit-id="activity.id" click-to-edit-name="'title'" click-to-edit-allvalue="activity"></div>
+                    </div></div>
+                </div>
+                <div class="row"  style="border-bottom: 1px solid #fff; margin-bottom: 10px;">
+                    <div class="col-md-2"><strong>活动说明</strong></div>
+                    <div class="col-md-7"><div class="col-md-9"  id="bind-html-with-trust">
+                        <div click-to-edit-activity-other="activity.description" click-to-edit-id="activity.id" click-to-edit-name="'description'"  click-to-edit-allvalue="activity"></div>
+
+                    </div></div>
+                </div>
+                <div class="row" style="border-bottom: 1px solid #fff; margin-bottom: 10px;" >
+                    <div class="col-md-2"><strong>活动免责声明</strong></div>
+                    <div class="col-md-7"><div class="col-md-9" >
+                        <div click-to-edit-activity-other="activity.announcement" click-to-edit-id="activity.id" click-to-edit-name="'announcement'"  click-to-edit-allvalue="activity"></div>
+                    </div></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-2"><strong>活动条款</strong></div>
+                    <div class="col-md-7"><div class="col-md-9">
+                        <div click-to-edit-activity-other="activity.agreement" click-to-edit-id="activity.id" click-to-edit-name="'agreement'"  click-to-edit-allvalue="activity"></div>
+                    </div></div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>

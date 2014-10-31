@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html ng-app="memaApp" ng-csp>
+<head>
+    <meta charset="UTF-8">
+    <title>管理登陆</title>
+    <script>
+    var menmaJsver = "201410171030";
+    var menmaJsUrls = 
+            ["jquery.min",
+            "jquery.md5",
+            "socket.io/socket.io",
+            "f2e-check",
+            "errinfo",
+            "bootstrap.min",
+            "angular/angular.min",
+            "angular/angular-route.min",
+            "angular/angular-animate.min",
+            "angular/angular-resource.min",
+            "angular/angular-sanitize.min",
+            "angular/angular-scenario",
+            "angular/socket",
+            "angular/angular-local-storage.min",
+            "angular/angular-strap.min",//http://mgcrea.github.io/angular-strap/
+            "angular/angular-strap.tpl.min",
+            "angular/angular-ueditor",//http://inhu.net/publish-angular-ueditor.html
+            "config",  //配置文件
+//            "controllers/Allapp",
+            "controllers/adminindex",
+            "controllers/adminlogin",
+            "controllers/userindex",
+            "controllers/activityindex",//活动列表控制器
+            "controllers/activityadd",//活动增加控制器
+            "controllers/activityshow",//活动查看控制器
+            "controllers/activitymodify", //活动修改控制器
+            "controllers/carportmgr", //车位管理控制器
+            "controllers/orderindex", //订单管理控制器
+            "ueditor/ueditor.config",
+            "ueditor/ueditor.all",
+            "ueditor/lang/zh-cn/zh-cn"
+            ];
+
+    function menmaloadScript(i) {
+        if (!menmaJsUrls[i]) return;
+        var script = document.createElement("script")
+        script.type = "text/javascript";
+        if (script.readyState) { //IE
+            script.onreadystatechange = function() {
+                if (script.readyState == "loaded" ||
+                    script.readyState == "complete") {
+                    script.onreadystatechange = null;
+                    menmaloadScript(i + 1);
+                }
+            };
+        } else { //Others
+            script.onload = function() {
+                menmaloadScript(i + 1);
+            };
+        }
+        script.src = "asset/js/" + menmaJsUrls[i] + ".js?ver=" + menmaJsver;
+        document.getElementsByTagName("head")[0].appendChild(script);
+    }
+    menmaloadScript(0);
+
+    var ua = navigator.userAgent;
+    if (/Android (\d+\.\d+)/.test(ua)) {
+        var version = parseFloat(RegExp.$1);
+        // andriod 2.3
+        if (version > 2.3) {
+            document.write('<meta name="viewport" content="width=640, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">');
+            // andriod 2.3以上
+        } else {
+            document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+        }
+        // 其他系统
+    } else {
+        document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi,minimal-ui">');
+    }
+
+    </script>
+    <!--<base href="http://admin/">-->
+    <link rel="stylesheet" href="asset/css/bootstrap.min.css?t=201409261619">
+    <link rel="stylesheet" href="asset/css/angular-motion.min.css?t=201409261619">
+    <link rel="stylesheet" href="asset/css/ueditor.css?t=201409261619">
+    <link rel="stylesheet" href="asset/css/main.css?t=201409261619">
+    <link rel="shortcut icon" href=" /favicon.ico" />
+
+</head>
+<body>
+ <div ng-view  class="allam"></div>
+</body>
+</html>

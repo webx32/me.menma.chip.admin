@@ -1,0 +1,73 @@
+<div tabindex="-1" role="dialog" class="modal fade ng-isolate-scope in" ng-class="{in: animate}" ng-style="{'z-index': 1050 + index*10, display: 'block'}" ng-click="close($event)" modal-window="" index="0" animate="animate" style="z-index: 1050; display: block;">
+    <div class="modal-dialog" ng-class="{'modal-sm': size == 'sm', 'modal-lg': size == 'lg'}">
+        <div class="modal-content">
+            <div class="modal-header ng-scope">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="$hide()">×</button>
+                <h4>车位添加</h4>
+            </div>
+            <div class="modal-body modal-body-create-bucket">
+                <!-- 面板 -->
+                <div class="panel panel-default noborder">
+
+                    <div class="panel-body">
+                        <form class="form-horizontal" role="form" name="carform">
+<input type="hidden" ng-model="carAdd.id">
+
+                            <div class="form-group">
+                                <label for="carAddnum" class="col-sm-3 control-label">车位标题</label>
+                                <div class="col-sm-4">
+                                    <input type="text" ng-model="carAdd.title"   class="form-control" id="carAddnum" ng-required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="selectTag" class="col-sm-3 control-label">车位区域</label>
+                                <div class="col-sm-3">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="selectTag" ng-model="carAdd.exts.AREA">
+                                        <div class="input-group-btn dropdown-menuulli" >
+                                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" bs-dropdown="[{'text':'A','click':'carAdd.exts.AREA=\'A\''},
+                                            {'text':'B','click':'carAdd.exts.AREA=\'B\''},
+                                            {'text':'C','click':'carAdd.exts.AREA=\'C\''},
+                                            {'text':'D','click':'carAdd.exts.AREA=\'D\''},
+                                            {'text':'E','click':'carAdd.exts.AREA=\'E\''},
+                                            {'text':'F','click':'carAdd.exts.AREA=\'F\''},
+                                            {'text':'G','click':'carAdd.exts.AREA=\'G\''},
+                                            {'text':'H','click':'carAdd.exts.AREA=\'H\''},
+                                            {'text':'I','click':'carAdd.exts.AREA=\'I\''},
+                                            {'text':'J','click':'carAdd.exts.AREA=\'J\''},
+                                            {'text':'K','click':'carAdd.exts.AREA=\'K\''},
+                                            {'text':'L','click':'carAdd.exts.AREA=\'L\''},
+                                            {'text':'M','click':'carAdd.exts.AREA=\'M\''},
+                                            {'text':'N','click':'carAdd.exts.AREA=\'N\''},
+                                            {'text':'O','click':'carAdd.exts.AREA=\'O\''}]">速选 <span class="caret"></span></button>
+
+                                        </div><!-- /btn-group -->
+                                    </div><!-- /input-group -->
+
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="carAddnum" class="col-sm-3 control-label">车位号</label>
+                                <div class="col-sm-4">
+                                    <input type="text" ng-model="carAdd.exts.NUM"   class="form-control"  ng-required>
+                                </div>
+                            </div>
+
+
+
+
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-sm btn-link" ng-click="$hide()">取消</button>
+                    <button class="btn btn-sm btn-normal" ng-click="addCarPortOk()">完成</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+</div>

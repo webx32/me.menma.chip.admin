@@ -1,0 +1,52 @@
+<div ng-include src="'template/top.html'"></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div ng-include src="'template/sidebar.html'"></div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">客户管理</h1>
+            <!-- 面板 -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"> <i class="glyphicon glyphicon-user"></i> 客户列表
+
+
+
+                        <i class="glyphicon glyphicon-plus cp" ng-click="addUser()" title="添加管理员"></i>
+                        <input style="widht:200px; float: right; color: #000;" ng-model="queryuser" type="text" placeholder="输入客户信息进行搜索">
+                    </h3>
+                </div>
+
+                <table class="table table-bordered table-hover">
+                    <tr>
+                        <td class="col-md-4">姓名</td>
+                        <td class="col-md-4">电话</td>
+                        <td class="col-md-2">操作</td>
+                    </tr>
+                    <!-- removed by huangxin at 2014-10-25 暂时将分页功能注释后方便调试 -->
+                     <!--<tr ng-repeat="user in users | filter:queryuser("",0)| offset: currentPage*itemsPerPage | limitTo: itemsPerPage" >-->
+                    <tr ng-repeat="user in users">
+                        <td>{{user.real}}</td>
+                        <td>{{user.tel}}</td>
+                        <td><a href="JavaScript:void(0);" data-content="删除用户’{{user.real}}‘后，无法恢复！！<br>确定删除？" data-placement="left" data-template="/template/user/deluserpopover.html" data-animation="am-fade" bs-popover id="user{{$index}}" ng-click="delUser(user.tel);" title="删除用户" >删除</a> 
+
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="panel-footer page" ng-show="range>0">
+                    <ul class="pagination">
+                        <li ng-class="prevPageDisabled()">
+                            <a href ng-click="prevPage()"> « Prev</a>
+                        </li>
+                        <li ng-repeat="n in pageCount()" ng-class="{active: n == currentPage}" ng-click="setPage(n)"><a href="#">{{n+1}}</a> 
+                        </li>
+                        <li ng-class="nextPageDisabled()"> <a href ng-click="nextPage()">Next »</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,84 @@
+<div ng-include src="'template/top.html'"></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div ng-include src="'template/sidebar.html'"></div>
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">订单管理</h1>
+            <div class="panel panel-default noborder" >
+                <div class="panel-heading">
+                    <h3 class="panel-title"> <i class="glyphicon glyphicon-user"></i> 订单列表
+
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-primary dropdown-toggle btn-xs" data-toggle="dropdown">
+                                快速筛选 <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a ng-click="">所有订单</a></li>
+                                <li class="divider"></li>
+                                <li><a ng-click="">1小时内新单</a></li>
+                                <li><a ng-click="">12小时内新单</a></li>
+                                <li><a ng-click="">24小时内新单</a></li>
+                                <li class="divider"></li>
+                                <li><a ng-click="">未付款</a></li>
+                                <li><a ng-click="">未发货</a></li>
+                                <li><a ng-click="">已结清</a></li>
+                            </ul>
+                        </div>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-primary dropdown-toggle btn-xs" data-toggle="dropdown">
+                                快速排序 <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a ng-click="orderby=''">默认排序</a></li>
+                                <li><a ng-click="orderby='id'">订单编号</a></li>
+                                <li><a ng-click="orderby='created_at'">订单时间</a></li>
+
+                            </ul>
+                        </div>
+                       <span style=" float: right; color: #fff;">
+
+                           高级查询：<input style="widht:200px; color: #000;" ng-model="queryorderinfo" type="text" placeholder="订单(信息)进行搜索"></span>
+                    </h3>
+                </div>
+
+                <div class="panel-body">
+
+                    <table class="table table-bordered  table-hover">
+                        <tr>
+                            <td class="col-md-3">订单编号</td>
+                            <td class="col-md-1">订单标题</td>
+                            <td class="col-md-1">订单时间</td>
+                            <td class="col-md-1">购买车位</td>
+                            <td class="col-md-1">订单用户</td>
+                            <td class="col-md-1">订单状态</td>
+                            <!--<td class="col-md-2">订单操作</td>-->
+                        </tr>
+                        <tr ng-repeat="order in orderlist|orderBy:orderby">
+                            <td>{{order.id}}</td>
+                            <!--order.id-->
+                            <td>{{order.product.title}}</td>
+                            <td>{{order.created_at||'2014/10/01'|date: "yyyy-MM-dd hh:mm:ss"}}</td>
+                            <!--||date: "yyyy-MM-dd hh:mm:ss"-->
+                            <td ng-click="order.product">{{order.product.exts[1]['ext_value']}}-{{order.product.exts[0]['ext_value']}}</td>
+
+                            <td ng-click="order.customer">{{order.customer.name}}</td>
+                            <td ng-switch="order.status">
+                                    <span ng-switch-when="created">已创建</span>
+                                    <span ng-switch-when="paid">已支付</span>
+                                    <span ng-switch-when="paynow">支付中</span>
+                                    <span ng-switch-default>创建</span>
+                            </td>
+                            <!--<td>修改价格 修改专题 设为无效</td>-->
+                        </tr>
+                    </table>
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

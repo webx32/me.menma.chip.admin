@@ -1,0 +1,65 @@
+
+<div ng-include src="'template/top.html'"></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div ng-include src="'template/sidebar.html'"></div>
+         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+             <div class="progress" style="margin-top: 30%">
+                 <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="progress.value" aria-valuemin="0" aria-valuemax="100" ng-style="progress.css">
+                     <span class="sr-only">60% Complete (warning)</span>
+                 </div>
+             </div>
+         </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-show="false">
+            <h1 class="page-header">活动管理</h1>
+
+            <div class="panel panel-default noborder">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="glyphicon glyphicon-user"></i> 活动列表 <a
+                            href="#/admin/activity/add"><i class="glyphicon glyphicon-plus cp" title="添加管理员"></i></a>
+                        <input style="widht:200px; float: right; color: #000;" ng-model="queryactivity" type="text"
+                               placeholder="输入活动信息进行搜索">
+                    </h3>
+                </div>
+                <div class="panel-body">
+
+                    <table class="table table-bordered  table-hover">
+                        <tr>
+                            <td class="col-md-4">活动标题</td>
+                            <td class="col-md-4">添加时间</td>
+                            <td class="col-md-2">操作</td>
+                        </tr>
+                        <tr ng-repeat="act in activity|limitTo:50|filter:queryactinfo">
+                            <td><a href="#admin/activity/show/{{act.id}}">{{act.title| limitTo : 20}}</a></td>
+                            <td>{{act.created_at||'2014/10/01'|date: "yyyy-MM-dd hh:mm:ss"}}</td>
+
+                            <td><a href="#/admin/activity/modify/{{act.id}}">修改</a><!-- <a
+                                    href="JavaScript:void(0);" data-title="删除活动 ’{{act.title}}‘后，无法恢复！！ " bs-tooltip data-animation="am-fade-and-slide-left" data-placement="left" ng-click="delactFun(act.id,$index);">删除</a>-->
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="panel-footer page" ng-show="range>0">
+                        <ul class="pagination">
+                            <li ng-class="prevPageDisabled()">
+                                <a href ng-click="prevPage()"> « Prev</a>
+                            </li>
+                            <li ng-repeat="n in pageCount()" ng-class="{active: n == currentPage}"
+                                ng-click="setPage(n)"><a href="#">{{n+1}}</a>
+                            </li>
+
+                            <li ng-class="nextPageDisabled()"><a href ng-click="nextPage()">Next »</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</div>

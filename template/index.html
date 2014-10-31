@@ -1,0 +1,89 @@
+<div ng-include src="'template/top.html'"></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div ng-include src="'template/sidebar.html'"></div>
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">整体概况</h1>
+
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title" ng-click="panels.car.collapsed = !panels.car.collapsed"> 车位统计
+                           <span class="pull-right">
+      <span class="glyphicon" ng-class="panels.car.collapsed?'glyphicon-chevron-down':'glyphicon-chevron-up'"></span>
+      </span>
+                        </h4>
+                    </div>
+                    <div class="panel-collapse collapse am-fade" ng-class="{in: !panels.car.collapsed}">
+                        <table class="table table-hover table-bordered">
+                            <tr>
+                                <td class="col-sm-2">车位数量</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>已出售车位</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>剩余车位</td>
+                                <td>0</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title" ng-click="panels.user.collapsed = !panels.user.collapsed"> 用户统计
+                           <span class="pull-right">
+      <span class="glyphicon" ng-class="panels.user.collapsed?'glyphicon-chevron-down':'glyphicon-chevron-up'"></span>
+      </span>
+                        </h4>
+                    </div>
+                    <div class="panel-collapse collapse am-fade" ng-class="{in: !panels.user.collapsed}">
+                        <table class="table table-hover table-bordered">
+                            <tr>
+                                <td class="col-sm-2">用户数量</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>性别比例</td>
+                                <td>100：30（男：女）</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title" ng-click="panels.order.collapsed = !panels.order.collapsed"> 订单统计
+                           <span class="pull-right">
+      <span class="glyphicon" ng-class="panels.order.collapsed?'glyphicon-chevron-down':'glyphicon-chevron-up'"></span>
+      </span>
+                        </h4>
+                    </div>
+                    <div class="panel-collapse collapse am-fade" ng-class="{in: !panels.order.collapsed}">
+                        <table class="table table-hover table-bordered">
+                            <tr>
+                                <td class="col-sm-2">订单总数</td>
+                                <td>3</td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+</div>
